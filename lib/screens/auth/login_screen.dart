@@ -221,16 +221,61 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 16),
 
-                    // Demo hint
+                    // Demo Accounts & Quick Fill Helper
                     Container(
-                      padding: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
                         color: VfmColors.backgroundSecondary,
-                        borderRadius: BorderRadius.circular(6),
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(color: VfmColors.borderDefault),
                       ),
-                      child: const Text(
-                        '💡 Gợi ý: Nhập mật khẩu >= 6 ký tự để vào trang chính. Nhập mật khẩu "123456" để xem flow Đổi mật khẩu lần đầu.',
-                        style: TextStyle(fontSize: 12, color: VfmColors.textSecondary),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Row(
+                            children: [
+                              Icon(Icons.vpn_key_outlined, size: 16, color: VfmColors.primaryGreen),
+                              SizedBox(width: 6),
+                              Text(
+                                'Tài khoản demo có sẵn:',
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                  color: VfmColors.textPrimary,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 8),
+                          Wrap(
+                            spacing: 8,
+                            runSpacing: 6,
+                            children: [
+                              ActionChip(
+                                label: const Text('1. Vào trang chính (admin)'),
+                                avatar: const Icon(Icons.check, size: 16, color: VfmColors.primaryGreen),
+                                onPressed: () {
+                                  setState(() {
+                                    _usernameController.text = 'admin';
+                                    _passwordController.text = 'vfm@2026';
+                                    _errorMessage = null;
+                                  });
+                                },
+                              ),
+                              ActionChip(
+                                label: const Text('2. Đổi mật khẩu lần đầu'),
+                                avatar: const Icon(Icons.refresh, size: 16, color: VfmColors.yellowAccent),
+                                onPressed: () {
+                                  setState(() {
+                                    _usernameController.text = 'newuser';
+                                    _passwordController.text = '123456';
+                                    _errorMessage = null;
+                                  });
+                                },
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ],
