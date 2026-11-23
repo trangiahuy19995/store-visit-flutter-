@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'theme/app_colors.dart';
-import 'screens/store_visit_screen.dart';
+import 'screens/auth/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,10 +20,10 @@ class StoreVisitApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Thăm Viếng Đúng Tuyến',
+      title: 'VFM SFA - Thăm Viếng Đúng Tuyến',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: const StoreVisitScreen(),
+      home: const SplashScreen(),
     );
   }
 }
