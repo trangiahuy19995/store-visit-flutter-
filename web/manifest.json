@@ -1,0 +1,11 @@
+{
+  "name": "Thăm Viếng Đúng Tuyến",
+  "short_name": "Thăm Viếng",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F6FBF3",
+  "theme_color": "#2D6A44",
+  "description": "Ứng dụng Thăm Viếng Đúng Tuyến - Flutter Material 3",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false
+}
